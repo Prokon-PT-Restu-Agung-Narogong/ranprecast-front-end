@@ -4,6 +4,7 @@ import quality from '../components/quality'
 import product from '../components/product'
 import portofolio from '../components/portofolio'
 import btnContact from '../components/btncontact'
+
 const homepage = {
 	async init(){
 		return `
