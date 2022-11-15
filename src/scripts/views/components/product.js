@@ -4,14 +4,9 @@ const product = {
 	init(){
 		return `
 		<div id="product" class="w-full bg-black py-4 md:p-12">
-			<div class="flex">
-				<div class="w-2/4 flex">
-					<h3 class="my-auto font-title text-2xl md:text-4xl text-white p-2">Produk <span class="text-red-600">RAN Precast</span></h3>
-				</div>
-				<div class="w-2/4 flex">
-					<a href="#/products" class="text-white ml-auto my-auto hover:bg-red-600 p-2 font-text border border-2 border-white hover:border-red-600">Lihat Semua</a>
-				</div>
-			</div>
+		
+				<h3 class="my-auto text-center font-title text-2xl md:text-4xl text-white p-2">Produk <span class="text-red-600">RAN Precast</span></h3>
+						
 			<div class="flex w-5/6 mx-auto md:h-[350px] mt-4">
 				<ul id="product" class="w-full m-auto h-full flex flex-col md:flex-row md:px-8">
 					<li class="w-full md:w-2/6 border border-2 border-black card card-product-1 ml-auto flex bg-no-repeat bg-center bg-cover lazyload" src="./images/loading.gif" style="background-image : url('images/product/${dataProducts[0].img[1]}')">
@@ -73,7 +68,10 @@ const product = {
 						</div>
 					</li>
 				</ul>
-			</div>
+				</div>
+				<div class="w-10/12 mt-9 md:flex">
+					<a href="#/products" class="text-white ml-auto my-auto hover:bg-red-600 p-2 font-text border border-2 border-white hover:border-red-600">Lihat Semua</a>
+				</div>
 		</div>`;
 	},
 	hoverCard(nameClass){

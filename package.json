@@ -27,6 +27,7 @@
     "webpack-dev-server": "^4.9.1"
   },
   "dependencies": {
+    "await": "^0.2.6",
     "fast-image-zoom": "^7.0.1",
     "jquery": "^3.6.0",
     "lazysizes": "^5.3.2"

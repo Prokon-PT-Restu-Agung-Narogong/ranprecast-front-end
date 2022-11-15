@@ -4,8 +4,13 @@ const quality = {
 		<section class="w-full md:my-[70px] flex flex-col">
 			<h3 class="font-title text-3xl md:text-4xl mx-auto mb-8">Keunggulan Produk <span class="text-red-600">RAN Precast</span></h3>
 			<div class="flex h-full">
-				<div class="w-full md:w-2/4 h-full grid grid-cols-2 grid-rows-4 gap-4 py-2 md:p-12">
-					<div class="flex flex-col col-span-2">
+				<div class="w-full max-sm h-full grid grid-cols-4 grid-rows-2 gap-4 py-2 md:p-12">
+					<div class="flex flex-col">
+						<div class="bg-white w-full h-full  flex">
+							<img src="images/Logo.png" class="w-[200px] h-[200px] m-auto"/>
+						</div>
+					</div>
+					<div class="flex flex-col">
 						<svg xmlns="http://www.w3.org/2000/svg" class="mt-auto mb-2 text-red-600 mx-auto h-12 w-12" viewBox="0 0 20 20" fill="currentColor">
 						  <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
 						</svg>
@@ -47,11 +52,6 @@ const quality = {
 						  <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" clip-rule="evenodd" />
 						</svg>
 						<h4 class="text-xs md:text-sm font-bold mx-auto mb-auto font-text font-[600] capitalize text-center">Melayani dalam jumlah besar maupun kecil</h4>
-					</div>
-				</div>
-				<div class="w-2/4 max-h-[31em] flex pl-[5%] hidden md:block ">
-					<div class="bg-white w-full h-full  flex">
-						<img src="images/Logo.png" class="w-[400px] h-[400px] m-auto"/>
 					</div>
 				</div>
 			</div>
