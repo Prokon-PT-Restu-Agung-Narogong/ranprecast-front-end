@@ -69,8 +69,8 @@ const product = {
 					</li>
 				</ul>
 				</div>
-				<div class="w-10/12 mt-9 md:flex">
-					<a href="#/products" class="text-white ml-auto my-auto hover:bg-red-600 p-2 font-text border border-2 border-white hover:border-red-600">Lihat Semua</a>
+				<div class="w-12/12 mt-9 md:flex">
+					<a href="#/products" class="text-white mx-auto hover:bg-red-600 p-2 font-text border border-2 border-white hover:border-red-600">Lihat Semua</a>
 				</div>
 		</div>`;
 	},

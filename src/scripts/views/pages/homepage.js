@@ -1,13 +1,14 @@
-import hero from '../components/hero'
-import visimisi from '../components/visimisi'
-import quality from '../components/quality'
-import product from '../components/product'
-import portofolio from '../components/portofolio'
-import btnContact from '../components/btncontact'
+import hero from "../components/hero";
+import visimisi from "../components/visimisi";
+import quality from "../components/quality";
+import product from "../components/product";
+import portofolio from "../components/portofolio";
+import btnContact from "../components/btncontact";
+import feedback from "../components/feedback";
 
 const homepage = {
-	async init(){
-		return `
+  async init() {
+    return `
 			${await btnContact.init()}
 			<section id="hero">
 				${await hero.init()}
@@ -24,15 +25,18 @@ const homepage = {
 			<section>
 				${await product.init()}
 			</section>
+			<section>
+				${await feedback.init()}
+			</section>
 		`;
-	},
-	async afterRender(){
-		await btnContact.afterRender();
-		await hero.afterRender();
-		await product.afterRender();
-		await portofolio.afterRender()
-	},
-
-}
+  },
+  async afterRender() {
+    await btnContact.afterRender();
+    await hero.afterRender();
+    await product.afterRender();
+    await portofolio.afterRender();
+    await feedback.afterRender();
+  },
+};
 
 export default homepage;
