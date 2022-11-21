@@ -35,7 +35,6 @@ const homepage = {
     await hero.afterRender();
     await product.afterRender();
     await portofolio.afterRender();
-    await feedback.afterRender();
   },
 };
 
