@@ -1,16 +1,21 @@
+import hero from "../components/products/hero";
 import btnContact from '../components/btncontact'
-import allproducts from '../components/allproducts'
+import allproducts from '../components/products/allproducts'
 const productspage = {
 	async init(){
 		return `
 			${btnContact.init()}
-			<section>
-				${allproducts.init()}
+			<section class="xl:px-[5%]">
+			${await hero.init()}
+			</section>
+			<section class="xl:px-[5%]">
+				${await allproducts.init()}
 			</section>
 		`;
 	},
 	async afterRender(){
-		btnContact.afterRender()
+		await hero.afterRender();
+		btnContact.afterRender();
 		allproducts.afterRender();
 	},
 

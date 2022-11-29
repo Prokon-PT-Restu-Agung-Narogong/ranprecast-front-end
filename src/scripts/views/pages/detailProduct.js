@@ -1,19 +1,21 @@
 import UrlParser from '../../routes/url-parser';
-import dataProducts from '../../data/products';
 import btnContact from '../components/btncontact';
-const productspage = {
+import ContentData from '../../data/ContentData'
+const detailProducts = {
 	async init(){
+		this.data = new ContentData()
 		const url = UrlParser.parseActiveUrlWithoutCombiner();
-		this.product = dataProducts.filter((e)=>{
-			 return e.id == url.id
-		})
+		this.product = await this.data.getDataProdukByID(url.id);
 		this.lengthImage = this.product[0].img.length;
 		this.indexImage = 0;
 		return `
 			${btnContact.init()}
-			<section>
-				<div class="w-full min-h-[600px] flex md:flex-row flex-col">
-					<div class="w-full md:w-2/4 h-[300px] md:h-[600px] p-4 relative img-wrap">
+			<section class="my-[28px] px-[5%]">
+				<div class="flex my-[36px]">
+					<h1 class="text-[24px] w-full text-center font-primary uppercase font-[700]">Detail <span class="color-primary">Produk</span> </h1>
+				</div>
+				<div class="w-full min-h-[600px] flex xl:flex-row flex-col">
+					<div class="w-full xl:w-[550px] xl:h-[550px]  p-4 relative img-wrap">
 						<button class="w-[50px] h-[50px] absolute left-4 inset-y-[40%] text-gray-600 prev-image opacity-[50%]">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 20 20" fill="currentColor">
 							  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
@@ -27,23 +29,29 @@ const productspage = {
 							</svg>
 						</button>
 					</div>
-					<div class="w-full md:w-2/4 h-full p-4 md:py-10">
-						<h2 class="text-4xl md:text-5xl mt-auto font-semibold font-title tracking-wider text-black">${this.product[0].name}</h2>
-						<p class="text-sm md:text-base font-text min-h-[200px] md:min-h-[250px] mt-4">${this.product[0].desc}</p>
-						<a href="https://wa.me/6285817355087?text=Saya%20tertarik%20dengan%20produk%20 ${this.product[0].name}%20yang%20ditawarkan%20di%20website%20https://www.ranprecast.com/" target="_blank" class="p-4 bg-red-600 text-white uppercase">Pesan</a>
-						<a href="#/products" class="p-4 bg-gray-500 text-white uppercase hover:bg-red-600">Barang Lain</a>
-					</div>
-				</div>
-				<div class="flex flex-col md:p-8 md:flex-row">
-					<div class="w-full md:w-full p-8 border-y-2 border-gray-200">
-						<h5 class="text-2xl my-2 w-full md:w-1/6 font-semibold font-title tracking-wider text-black">Spesifikasi</h5>
-						<ul class="pl-8 list-decimal specs font-text">
-						</ul>
-					</div>
-					<div class="w-full md:w-2/4 p-8 border-y-2 border-l-2 border-gray-200 wrap-dimensi">
-						<h5 class="text-2xl my-2 w-full md:w-1/6 font-semibold font-title tracking-wider text-black">${this.product[0].dimensi == null ? "Jenis" : "Dimensi"}</h5>
-						<ul class="pl-8 list-disc dimensi w-full md:w-2/4 font-text">
-						</ul>
+					<div class="w-full xl:w-2/4 h-full px-[20px] lg:pl-[59px]">
+						<h2 class="text-[30px] font-[700] mt-auto font-semibold font-title tracking-wider text-black uppercase">${this.product[0].name}</h2>
+						<p class="text-[14px] font-[400] mt-[16px] font-primary">${this.product[0].desc}</p>
+						<hr class="mt-[48px] mb-[16px]">
+						<div class="flex flex-col">
+							<div class="w-full">
+								<h5 class="text-[18px] font-[600] letter-[4%] w-full font-primary">Spesifikasi</h5>
+								<ul class="specs list-decimal ml-[20px] font-primary text-[13px] font-[400] mt-[11px]">
+								</ul>
+							</div>
+							<hr class="mt-[16px] mb-[16px]">
+							<div class="flex flex-col">
+								<h5 class="text-[18px] font-[600] letter-[4%] w-full font-primary">${this.product[0].dimensi == null ? "Jenis" : "Dimensi"}</h5>
+								<ul class="dimensi list-disc ml-[20px] font-primary text-[13px] font-[400] mt-[11px]">
+								</ul>
+							</div>
+						</div>
+						<hr class="mb-[48px] mt-[16px]">
+						<div class="grid grid-cols-1 grid-rows-2 gap-y-2 xl:grid-cols-3 xl:grid-rows-1 xl:gap-4 w-full ">
+							<a href="https://wa.me/6285817355087?text=Saya%20tertarik%20dengan%20produk%20 ${this.product[0].name}%20yang%20ditawarkan%20di%20website%20https://www.ranprecast.com/" target="_blank" class="p-4 bg-red-600 text-white uppercase w-full col-span-2 text-center text-[18px] font-[600]">Pesan</a>
+							<a href="#/products" class="p-4 bg-gray-500 text-white uppercase hover:bg-red-600 w-full text-center text-[18px] font-[600]">Produk Lain</a>
+						</div>
+
 					</div>
 				</div>
 			</section>
@@ -90,7 +98,7 @@ const productspage = {
 
 	},
 	template(){
-		return `<img src="./images/loading.gif" data-src="images/product/${this.product[0].img[this.indexImage]}" class="lazyload w-full h-full bg-white shadow-xl rounded-lg  object-cover select-none img-wrap">`;
+		return `<img src="./images/loading.gif" data-src="${this.product[0].img[this.indexImage]}" class="lazyload w-full h-full bg-white shadow-xl rounded-lg  object-cover select-none img-wrap">`;
 	},
 	async afterRender(){
 		btnContact.afterRender()
@@ -108,4 +116,4 @@ const productspage = {
 
 }
 
-export default productspage;
+export default detailProducts;

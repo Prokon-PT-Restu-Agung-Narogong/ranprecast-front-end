@@ -1,7 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300&display=swap');
 @layer base {
 }
 
@@ -9,12 +8,26 @@
 
 }
 
-.font-title{
-	font-family: 'Bebas Neue', cursive;
+.font-primary{
+	font-family: Inter;
+}
+
+
+.color-primary{
+	color: #DC2626;
+}
+
+.bgcolor-primary{
+	background-color: #DC2626;
 }
 
 .font-text{
 	font-family: 'Inter', sans-serif;
+	font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
 }
 
 
@@ -27,3 +40,14 @@
 	background-color: rgba(0, 0, 0, 0.6);
 }
 
+.card-product .desc-card .desc-text{
+	display: none;
+}
+
+.card-product:hover .desc-card .desc-text{
+	display: block;
+}
+
+.aboutus-bg{
+	background-color: rgba(255, 255, 255, 0.9);
+}

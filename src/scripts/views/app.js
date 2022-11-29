@@ -1,7 +1,7 @@
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
-import footer from './components/footer'
-import header from './components/header'
+import footer from './components/layouts/footer'
+import header from './components/layouts/header'
 class App {
   constructor({ header, main, footer }){
     this.header = header;
@@ -21,6 +21,7 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this.main.innerHTML = await page.init();
+
     await page.afterRender();
   }
 }
