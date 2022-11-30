@@ -10,9 +10,9 @@ class App {
     this.initialAppShell();
   }
 
-  initialAppShell() {
-    this.header.innerHTML = header.init();
-    this.footer.innerHTML = footer.init();
+  async initialAppShell() {
+    this.header.innerHTML = await header.init();
+    this.footer.innerHTML = await footer.init();
     header.afterRender();
     footer.afterRender();
   }

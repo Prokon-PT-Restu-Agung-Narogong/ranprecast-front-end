@@ -1,25 +1,28 @@
+import ContentData from '../../data/ContentData'
 const btnContact = {
-	init(){
+	async init(){
+	  	this.data = new ContentData()
+		this.dataKontak = await this.data.getDataKontak();
 		return `
 		<div class="w-[120px] h-auto fixed z-30 right-4 md:right-12 bottom-12 flex cursor-pointer grid grid-cols-1 grid-rows-1 gap-4 ">
-			<a href="https://wa.me/6281324198783?text=Saya%20tertarik%20dengan%20produk%20yang%20ditawarkan%20di%20website%20https://www.ranprecast.com/" target="_blank" class="w-full h-[60px] flex  btn-contact hidden">
-				<div class="w-2/4 my-auto font-text font-semibold text-xs bg-white text-center">
+			<a href="https://wa.me/${this.dataKontak.whatsapp_1}?text=Saya%20tertarik%20dengan%20produk%20yang%20ditawarkan%20di%20website%20https://www.ranprecast.com/" target="_blank" class="w-full h-[60px] flex  btn-contact hidden">
+				<div class="w-2/4 my-auto font-semibold text-[12px] font-primary bg-white text-center">
 					Admin 1
 				</div>
 				<div class="w-2/4 h-full my-auto flex bg-green-600 rounded-[50%]">
 					${this.iconWhatsApp()}
 				</div>
 			</a>
-			<a href="https://wa.me/6285817355087?text=Saya%20tertarik%20dengan%20produk%20yang%20ditawarkan%20di%20website%20https://www.ranprecast.com/" target="_blank" class="w-full h-[60px] flex  btn-contact hidden">
-				<div class="w-2/4 my-auto font-text font-semibold text-xs bg-white text-center">
+			<a href="https://wa.me/${this.dataKontak.whatsapp_2}?text=Saya%20tertarik%20dengan%20produk%20yang%20ditawarkan%20di%20website%20https://www.ranprecast.com/" target="_blank" class="w-full h-[60px] flex  btn-contact hidden">
+				<div class="w-2/4 my-auto font-semibold text-[12px] font-primary bg-white text-center">
 					Admin 2
 				</div>
 				<div class="w-2/4 h-full my-auto flex bg-green-600 rounded-[50%]">
 					${this.iconWhatsApp()}
 				</div>
 			</a>
-			<a href="mailto:ranprecast@gmail.com" target="_blank" class="w-full h-[60px] flex  btn-contact hidden">
-				<div class="w-2/4 my-auto font-text font-semibold text-xs bg-white text-center">
+			<a href="mailto:${this.dataKontak.email}" target="_blank" class="w-full h-[60px] flex  btn-contact hidden">
+				<div class="w-2/4 my-auto font-semibold text-[12px] font-primary bg-white text-center">
 					Email
 				</div>
 				<div class="w-2/4 h-full my-auto flex bg-black rounded-[50%]">

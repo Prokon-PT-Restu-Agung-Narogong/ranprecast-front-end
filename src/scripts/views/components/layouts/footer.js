@@ -1,5 +1,8 @@
+import ContentData from '../../../data/ContentData'
 const footer = {
-  init() {
+  async init() {
+  	this.data = new ContentData()
+		this.dataKontak = await this.data.getDataKontak();
     return `
 		<div id="footer" class="px-[23px] py-[13px] xl:px-[5%] xl:mt-[36px] lg:flex">
 			<div>
@@ -11,7 +14,7 @@ const footer = {
 					  	<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
 						</svg>
 					</div>
-					<span class="text-[12px] font-primary font-[500] w-7/8">Jl. Raya PPLI, Ds. Nambo Kec. Klapanungga Kab. Bogor 16820 – Jawa Barat (Workshop 1)</span>
+					<span class="text-[12px] font-primary font-[500] w-7/8">${this.dataKontak.alamat_1}</span>
 				</div>
 				<div class="flex mt-[5px]">
 					<div class="w-1/8">
@@ -19,7 +22,7 @@ const footer = {
 					  	<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
 						</svg>
 					</div>
-					<span class="text-[12px] font-primary font-[500] w-7/8">Ds. Klapasawit Kec. Kalimanah Kab. Purbalingga – Jawa Tengah (Workshop 2)</span>
+					<span class="text-[12px] font-primary font-[500] w-7/8">${this.dataKontak.alamat_2}</span>
 				</div>
 				<div class="flex mt-[5px]">
 					<div class="w-1/8">
@@ -28,7 +31,7 @@ const footer = {
 					  	<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
 						</svg>
 					</div>
-					<a href="tel:+62281-890-2251" class="text-[12px] font-primary font-[500] w-7/8">0281-890-2251 (Fax)</a>
+					<a href="tel:${this.dataKontak.telepon}" class="text-[12px] font-primary font-[500] w-7/8">${this.dataKontak.telepon} (Fax)</a>
 				</div>
 				<div class="flex mt-[5px]">
 					<div class="w-1/8">
@@ -37,15 +40,15 @@ const footer = {
 						  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
 						</svg>
 					</div>
-					<a href="mailto:ranprecast@gmail.com" class="text-[12px] font-primary font-[500] w-7/8">ranprecast@gmail.com</a>
+					<a href="mailto:${this.dataKontak.email}" class="text-[12px] font-primary font-[500] w-7/8">${this.dataKontak.email}</a>
 				</div>
 			</div>
 
 			<div class="mt-[12px] lg:ml-auto lg:mt-auto">
 				<h5 class="text-[12px] leading-[15px] font-[600] font-primary lg:text-[13px]"> Media Sosial</h5>
 				<div class="mt-[13px] lg:my-[22px]">
-					<a href="https://instagram.com/ranprecast?igshid=YmMyMTA2M2Y=" target="_blank" class="fa fa-instagram text-[20px] bg-gray-200 p-[4px] rounded-md color-primary mx-[5px]"></a>
-					<a href="https://www.youtube.com/channel/UC8Ors0Yr40Q9GZ4rmSBbDRQ" target="_blank" class="fa fa-youtube text-[20px] bg-gray-200 p-[4px] rounded-md color-primary mx-[5px]"></a>
+					<a href="${this.dataKontak.link_instagram}" target="_blank" class="fa fa-instagram text-[20px] bg-gray-200 p-[4px] rounded-md color-primary mx-[5px]"></a>
+					<a href="${this.dataKontak.link_youtube}" target="_blank" class="fa fa-youtube text-[20px] bg-gray-200 p-[4px] rounded-md color-primary mx-[5px]"></a>
 				</div>
 				<span class="text-[10px] font-primary font-[600] mt-[15px] lg:text-[14px]">Copyright ©2022. Designer By <span class="text-red-600">PT.Restu Agung Narogong</span></span>
 			</div>

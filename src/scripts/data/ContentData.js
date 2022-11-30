@@ -48,6 +48,12 @@ class ContentData extends APIConfig{
 			method : "GET"
 		})
 	}
+	async getDataKontak(){
+		return await this.request({
+			request : "kontak",
+			method : "GET"
+		})
+	}
 }
 
 export default ContentData;

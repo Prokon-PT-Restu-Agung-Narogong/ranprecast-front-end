@@ -2,14 +2,14 @@ import homepage from "../views/pages/homepage";
 import productspage from "../views/pages/productspage";
 import detailProduct from "../views/pages/detailProduct";
 import aboutUs from "../views/pages/aboutUs";
-import login from "../views/pages/login";
+import feedback from "../views/pages/feedback";
 
 const routes = {
   "/": homepage,
   "/products": productspage,
   "/product/:id": detailProduct,
   "/aboutus": aboutUs,
-  "/login": login,
+  "/feedback" : feedback
 };
 
 export default routes;

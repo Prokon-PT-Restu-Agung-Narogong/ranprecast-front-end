@@ -6,10 +6,11 @@ const detailProducts = {
 		this.data = new ContentData()
 		const url = UrlParser.parseActiveUrlWithoutCombiner();
 		this.product = await this.data.getDataProdukByID(url.id);
+		this.kontak = await this.data.getDataKontak();
 		this.lengthImage = this.product[0].img.length;
 		this.indexImage = 0;
 		return `
-			${btnContact.init()}
+			${await btnContact.init()}
 			<section class="my-[28px] px-[5%]">
 				<div class="flex my-[36px]">
 					<h1 class="text-[24px] w-full text-center font-primary uppercase font-[700]">Detail <span class="color-primary">Produk</span> </h1>
@@ -48,7 +49,7 @@ const detailProducts = {
 						</div>
 						<hr class="mb-[48px] mt-[16px]">
 						<div class="grid grid-cols-1 grid-rows-2 gap-y-2 xl:grid-cols-3 xl:grid-rows-1 xl:gap-4 w-full ">
-							<a href="https://wa.me/6285817355087?text=Saya%20tertarik%20dengan%20produk%20 ${this.product[0].name}%20yang%20ditawarkan%20di%20website%20https://www.ranprecast.com/" target="_blank" class="p-4 bg-red-600 text-white uppercase w-full col-span-2 text-center text-[18px] font-[600]">Pesan</a>
+							<a href="https://wa.me/${this.kontak.whatsapp_1}?text=Saya%20tertarik%20dengan%20produk%20 ${this.product[0].name}%20yang%20ditawarkan%20di%20website%20https://www.ranprecast.com/" target="_blank" class="p-4 bg-red-600 text-white uppercase w-full col-span-2 text-center text-[18px] font-[600]">Pesan</a>
 							<a href="#/products" class="p-4 bg-gray-500 text-white uppercase hover:bg-red-600 w-full text-center text-[18px] font-[600]">Produk Lain</a>
 						</div>
 

@@ -39,7 +39,6 @@ const feedback = {
   },
 
   afterRender(){
-  	console.log(this.dataFeedback)
   		this.dataFeedback.forEach((e)=>{
   			$('.feedback-list').append(this.itemFeedback({
   				img : e.img,

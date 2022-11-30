@@ -4,7 +4,7 @@ import allproducts from '../components/products/allproducts'
 const productspage = {
 	async init(){
 		return `
-			${btnContact.init()}
+			${await btnContact.init()}
 			<section class="xl:px-[5%]">
 			${await hero.init()}
 			</section>
