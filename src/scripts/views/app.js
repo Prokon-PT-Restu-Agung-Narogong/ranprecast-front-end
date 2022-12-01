@@ -1,3 +1,5 @@
+import getDataUser from '../utils/getDataUser'
+import ContentData from '../data/ContentData'
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 import footer from './components/layouts/footer'
@@ -8,6 +10,8 @@ class App {
     this.main = main;
     this.footer = footer;
     this.initialAppShell();
+    this.contentData = new ContentData();
+    this.initGetDataUser();
   }
 
   async initialAppShell() {
@@ -15,6 +19,13 @@ class App {
     this.footer.innerHTML = await footer.init();
     header.afterRender();
     footer.afterRender();
+  }
+
+  async initGetDataUser(){
+    this.contentData.requestPOST({
+      request : "visitors",
+      data : await getDataUser.getAll(),
+    })
   }
 
   async renderPage() {
