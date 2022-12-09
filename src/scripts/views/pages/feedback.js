@@ -8,11 +8,11 @@ const aboutUs = {
 			${await btnContact.init()}
 			<section class="w-full h-[100vh] flex flex-col">
 				<div class="w-full h-full bg-red-600 flex">
-					<form class="w-[400px] h-auto bg-white m-auto flex flex-col px-[40px]">
+					<form id="testimoniForm" class="w-[400px] h-auto bg-white m-auto flex flex-col px-[40px]">
 						<img src="images/Logo.png" class="w-[60px] h-[60px] mx-auto mt-[20px]">
 						<h3 class="w-full text-center mt-[20px] font-primary text-[17px] font-[600] uppercase">Feedback</h3>
 						<h4 class="text-black font-primary text-center mt-[40px] text-[13px]">Bagaimana penilaianmu terhadap Ranprecast?</h4>
-						<input type="text" name="rating" class="rating hidden"  value="1" />
+						<input required type="text" name="rating" class="rating hidden"  value="1" />
 						<div class="w-full mx-auto flex flex-col">
 							<div class="mx-auto flex my-[13px]">
 								<i class="fa-solid fa-star text-gray-400 color-primary testimoni-star text-[18px]"></i>
@@ -23,11 +23,12 @@ const aboutUs = {
 							</div>
 							<span class="status text-[11px] font-primary color-primary mx-auto">Sangat Buruk</span>
 						</div>
-						<input type="text" name="name" placeholder="Nama" class="w-full h-[40px] px-2 border border-1 border-gray-200 font-primary my-[5px] focus:outline-none focus:border-red-600 text-[13px]">
-						<input type="text" name="email" placeholder="Email" class="w-full h-[40px] px-2 border border-1 border-gray-200 font-primary my-[5px] focus:outline-none focus:border-red-600 text-[13px]">
-						<input type="text" name="pesan" placeholder="Pesan" class="w-full h-[100px] px-2 border border-1 border-gray-200 font-primary my-[5px] focus:outline-none focus:border-red-600 text-[13px]">
+						<input required type="text" name="name" placeholder="Nama" class="w-full h-[40px] px-2 border border-1 border-gray-200 font-primary my-[5px] focus:outline-none focus:border-red-600 text-[13px]">
+						<input required type="email" name="email" placeholder="Email" class="w-full h-[40px] px-2 border border-1 border-gray-200 font-primary my-[5px] focus:outline-none focus:border-red-600 text-[13px]">
+						<input required type="text" name="deskripsi" placeholder="Pesan" class="w-full h-[100px] px-2 border border-1 border-gray-200 font-primary my-[5px] focus:outline-none focus:border-red-600 text-[13px]">
 
-						<input type="submit" class="px-[105px] py-[12px] text-white bg-red-600 font-primary text-[12px] my-[50px]" value="KIRIM FEEDBACK">
+						<h4 class="message-submit text-white font-primary text-center text-[13px] bgcolor-primary my-[5px] hidden">Berhasil Terkirim</h4>
+						<input type="submit" class="px-[105px] py-[12px] text-white bg-red-600 font-primary text-[12px] my-[50px]" value="KIRIM FEEDBACK" disable>
 					</form>
 				</div>
 			</section>
@@ -49,8 +50,37 @@ const aboutUs = {
 			})
 		})
 	},
+	
+	async submitForm(){
+		$('#testimoniForm').submit(async (event)=>{
+			event.preventDefault()
+
+			let form = $('#testimoniForm');
+			let dataTestimoni = {
+				rating : form.find("input[name='rating']").val(),
+				name : form.find("input[name='name']").val(),
+				email : form.find("input[name='email']").val(),
+				deskripsi : form.find("input[name='deskripsi']").val(),
+			}
+			form.find("input[type='text'],input[type='email']").val('')
+			await this.data.requestPOST({
+				request : "testimoni",
+				data : dataTestimoni
+			}).then((e)=>{
+				$('.message-submit').toggleClass('hidden')
+				$('.message-submit').text('Berhasil Terkirim')
+			}).error((e)=>{
+				$('.message-submit').text('Gagal Terkirim')
+
+			})
+
+
+		})
+	},
+
 	async afterRender(){
 		this.testimoniStar()
+		await this.submitForm();
 	},
 
 }

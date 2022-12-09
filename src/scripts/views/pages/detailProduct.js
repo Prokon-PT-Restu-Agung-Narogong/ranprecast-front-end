@@ -17,14 +17,14 @@ const detailProducts = {
 				</div>
 				<div class="w-full min-h-[600px] flex xl:flex-row flex-col">
 					<div class="w-full xl:w-[550px] xl:h-[550px]  p-4 relative img-wrap">
-						<button class="w-[50px] h-[50px] absolute left-4 inset-y-[40%] text-gray-600 prev-image opacity-[50%]">
+						<button class="w-[50px] h-[50px] hidden absolute left-4 inset-y-[40%] text-gray-600 prev-image opacity-[50%]">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 20 20" fill="currentColor">
 							  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
 							</svg>
 						</button>
 						${this.template()}
 
-						<button class="w-[50px] h-[50px] absolute right-4 inset-y-[40%] text-gray-600 next-image opacity-[50%]">
+						<button class="w-[50px] h-[50px] hidden absolute right-4 inset-y-[40%] text-gray-600 next-image opacity-[50%]">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 20 20" fill="currentColor">
 							  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
 							</svg>
@@ -42,7 +42,7 @@ const detailProducts = {
 							</div>
 							<hr class="mt-[16px] mb-[16px]">
 							<div class="flex flex-col">
-								<h5 class="text-[18px] font-[600] letter-[4%] w-full font-primary">${this.product[0].dimensi == null ? "Jenis" : "Dimensi"}</h5>
+								<h5 class="text-[18px] font-[600] letter-[4%] w-full font-primary">Jenis</h5>
 								<ul class="dimensi list-disc ml-[20px] font-primary text-[13px] font-[400] mt-[11px]">
 								</ul>
 							</div>
@@ -72,6 +72,7 @@ const detailProducts = {
 	},
 	async addJenis(){
 		const jenis = await $('.dimensi');
+		console.log(this.product[0])
 		this.product[0].jenis.forEach((e)=>{
 			jenis.append(`<li>${e}</li>`)
 		})
@@ -99,20 +100,13 @@ const detailProducts = {
 
 	},
 	template(){
-		return `<img src="./images/loading.gif" data-src="${this.product[0].img[this.indexImage]}" class="lazyload w-full h-full bg-white shadow-xl rounded-lg  object-cover select-none img-wrap">`;
+		return `<img src="./images/loading.gif" data-src="${this.product[0].img}" class="lazyload w-full h-full bg-white shadow-xl rounded-lg  object-cover select-none img-wrap">`;
 	},
 	async afterRender(){
 		btnContact.afterRender()
 		this.addSpecs();
 		await this.changeImage();
-		if(this.product[0].dimensi == null && this.product[0].jenis == null){
-			$('.wrap-dimensi').remove()
-		}
-		else if(this.product[0].dimensi == null){
-			this.addJenis();
-		}else if(this.product[0].jenis == null){
-			this.addDimensi();
-		}
+		await this.addJenis();
 	},
 
 }

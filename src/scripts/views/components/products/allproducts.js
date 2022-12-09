@@ -13,7 +13,7 @@ const allproducts = {
 				</ul>`;
 	},
 	cardExample(data){
-		return `<li class="lazyload w-full bg-gray-400 md:h-[350px] shadow-md ml-auto flex bg-no-repeat bg-center bg-cover card-product " src="./images/loading.gif" style="background-image : url('${data.img[0]}')">
+		return `<li class="lazyload w-full bg-gray-400 md:h-[350px] shadow-md ml-auto flex bg-no-repeat bg-center bg-cover card-product " src="./images/loading.gif" style="background-image : url('${data.img}')">
 					<div class="mt-auto w-full p-8 flex flex-col desc-card">
 						<h5 class="text-[14px] text-white font-primary uppercase md:text-[17px] xl:text-[20px]">${data.name}</h5>
 						<p class="desc-text text-white font-primary text-[11px] font-[300] md:text-[12px]">${data.desc}</p>
