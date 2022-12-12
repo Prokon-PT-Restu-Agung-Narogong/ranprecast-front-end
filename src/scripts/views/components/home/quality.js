@@ -3,6 +3,7 @@ const quality = {
 	async init(){
 		this.contentData = new ContentData();
 		this.dataQuality = await this.contentData.getDataQuality()
+		this.dataTentang = await this.contentData.getDataTentang()
 		console.log(this.dataQuality);
 		return `
 		<section class="w-full md:mt-[9px] flex flex-col">
@@ -11,7 +12,7 @@ const quality = {
 				<div class="w-full h-auto grid grid-cols-2 grid-rows-4 gap-4 justify-items-center md:grid-cols-3 md:grid-rows-3 md:gap-[40px] xl:grid-cols-4 xl:grid-rows-2">
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">
 						<div class="bg-white w-full h-full  flex">
-							<img src="images/Logo.png" class="w-[100px] h-[100px] m-auto md:w-[150px] md:h-[150px]"/>
+							<img src="${this.dataTentang.logo}" class="w-[100px] h-[100px] m-auto md:w-[150px] md:h-[150px]"/>
 						</div>
 					</div>
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">

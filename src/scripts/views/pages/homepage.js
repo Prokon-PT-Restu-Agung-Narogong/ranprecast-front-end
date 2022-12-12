@@ -33,6 +33,7 @@ const homepage = {
   async afterRender() {
     await btnContact.afterRender();
     await hero.afterRender();
+    await visimisi.afterRender();
     await product.afterRender();
     await portofolio.afterRender();
     await feedback.afterRender();

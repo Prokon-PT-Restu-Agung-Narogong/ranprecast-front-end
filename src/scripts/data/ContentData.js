@@ -2,9 +2,9 @@ import APIConfig from '../config/APIConfig';
 
 class ContentData extends APIConfig{
 	// start request dari /api
-	async getDataHero(){
+	async getDataTentang(){
 		return await this.requestGET({
-			request : "hero",
+			request : "tentang",
 		})
 	}
 
