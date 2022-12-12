@@ -2,7 +2,7 @@ class APIConfig {
 	baseUrl = "";
 
 	constructor(){
-		this.baseUrl = "http://localhost:3000/api"
+		this.baseUrl = "https://gateway.ranprecast.com/api"
 	}
 
 	async requestGET({request}) {
