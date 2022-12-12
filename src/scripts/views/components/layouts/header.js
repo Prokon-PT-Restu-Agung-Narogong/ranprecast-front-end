@@ -1,9 +1,13 @@
+import ContentData from '../../../data/ContentData'
+
 const header = {
-  init() {
+  async init() {
+  	this.data = new ContentData()
+		this.dataTentang = await this.data.getDataTentang();
     return `
 		<div class="w-full h-auto bg-white flex border-b-4 border-gray-100 px-[15px] py-[4px] relative xl:px-[5%]">
 			<div class="w-2/4 md:w-3/4 flex pl-[25px] md:pl-[50px] white">
-				<img data-src="./images/Logo.png" class="lazyload my-auto w-[50px] h-[50px] md:w-[70px] md:h-[70px]">
+				<img  src="./images/loading.gif" data-src="${this.dataTentang.logo}" class="lazyload my-auto w-[50px] h-[50px] md:w-[70px] md:h-[70px]">
 			</div>
 
 			<ul class="hidden md:flex md:ml-auto">

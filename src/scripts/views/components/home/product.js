@@ -4,7 +4,6 @@ const product = {
 	async init(){
 		this.contentData = new ContentData();
 		let dataProducts = await this.contentData.getDataProduk();
-		console.log(dataProducts);
 		return `
 		<div id="product" class="w-full bg-black py-4 md:p-12">
 		

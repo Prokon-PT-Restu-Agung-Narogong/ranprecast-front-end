@@ -32,8 +32,9 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this.main.innerHTML = await page.init();
-
+    $('.loading-wrap').show();
     await page.afterRender();
+    $('.loading-wrap').hide();
   }
 }
 

@@ -31,7 +31,7 @@ const detailProducts = {
 						</button>
 					</div>
 					<div class="w-full xl:w-2/4 h-full px-[20px] lg:pl-[59px]">
-						<h2 class="text-[30px] font-[700] mt-auto font-semibold font-title tracking-wider text-black uppercase">${this.product[0].name}</h2>
+						<h2 class="text-[30px] font-[700] mt-auto font-semibold font-title tracking-wider text-black uppercase break-all">${this.product[0].name}</h2>
 						<p class="text-[14px] font-[400] mt-[16px] font-primary">${this.product[0].desc}</p>
 						<hr class="mt-[48px] mb-[16px]">
 						<div class="flex flex-col">

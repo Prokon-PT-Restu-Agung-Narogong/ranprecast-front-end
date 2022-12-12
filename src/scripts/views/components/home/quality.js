@@ -4,7 +4,6 @@ const quality = {
 		this.contentData = new ContentData();
 		this.dataQuality = await this.contentData.getDataQuality()
 		this.dataTentang = await this.contentData.getDataTentang()
-		console.log(this.dataQuality);
 		return `
 		<section class="w-full md:mt-[9px] flex flex-col">
 			<h3 class="text-[16px] font-primary font-[700] uppercase text-center md:text-[20px] xl:text-[24px]">Keunggulan Produk <span class="color-primary">RAN Precast</span></h3>

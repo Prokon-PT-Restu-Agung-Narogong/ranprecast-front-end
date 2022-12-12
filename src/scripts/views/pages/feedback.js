@@ -3,7 +3,6 @@ import ContentData from '../../data/ContentData'
 const aboutUs = {
 	async init(){
 		this.data = new ContentData()
-		this.dataHero = await this.data.getDataHero();
 		return `
 			${await btnContact.init()}
 			<section class="w-full h-[100vh] flex flex-col">
@@ -77,9 +76,23 @@ const aboutUs = {
 
 		})
 	},
-
+	validateForm(){
+	    $("#testimoniForm").validate({
+	      rules: {
+	        name : {
+	          required : true,
+	          maxlength : 19,
+	        },
+	        deskripsi: {
+	        	required :true,
+	        	maxlength : 176
+	        }
+	      }
+	    });
+	  },
 	async afterRender(){
 		this.testimoniStar()
+		this.validateForm();
 		await this.submitForm();
 	},
 

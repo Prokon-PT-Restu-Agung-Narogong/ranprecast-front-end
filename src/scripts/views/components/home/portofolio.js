@@ -16,13 +16,13 @@ const portofolio = {
 					<img src="images/loading.gif" data-src="${linkImage}" class="lazyload w-full h-full object-cover p-2 shadow-inner" />
 				</li>`
 	},
-	layerForReview(linkImage){
+	layerForReview(linkImage,deskripsi){
 		let template = `
 		<div class="layer-review-portofolio fixed right-[100%] w-full h-full z-30 flex flex-col top-0" style="background-color: rgba(0, 0, 0, 0.6);">
 				<div class="w-full h-[50%] lg:h-[70%] flex flex-col lg:flex-row p-8" >
 					<img src="${linkImage}" class="w-full lg:w-[70%] h-full my-auto lg:mx-auto lg:my-0 object-cover">
 				</div>
-				<div class="w-full h-[50%] lg:h-[30%] flex flex-col p-8 lg:px-[15%] lg:flex-row text-[12px] text-white text-justify font-primary bg-black">Duis arcu dui, dictum id facilisis eu, posuere eu felis. Mauris vehicula erat vitae odio maximus, at condimentum turpis consequat. Pellentesque in porta sem. Sed et rhoncus ex, bibendum ultrices tellus. In suscipit nisl quis lectus dictum ullamcorper. Fusce commodo neque ac risus dignissim, eu euismod urna vulputate. In orci sapien, rhoncus egestas ligula et, tincidunt lacinia metus. Vestibulum magna dolor, facilisis et orci ac, vulputate tempus arcu. Aenean varius aliquet leo, eu vulputate nunc facilisis in. Phasellus nisi sapien, sollicitudin ultricies enim at, ornare tempor urna. Proin at ante pellentesque, accumsan libero quis, pulvinar sem. Nam ex sem, finibus a mi quis, interdum sodales elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec aliquet lectus ac justo efficitur elementum. Pellentesque lectus elit, porttitor non magna eu, vulputate vulputate augue. Nam eget bibendum purus.Etiam in hendrerit velit. Etiam molestie fringilla aliquet. Fusce pretium suscipit molestie. Etiam eros lorem, pharetra sed nisl nec, hendrerit fermentum orci. Curabitur tincidunt, elit nec dignissim aliquet, tortor augue molestie magna, eget fringilla dolor lectus vel neque. Vestibulum quis sapien in massa pulvinar vehicula pharetra id velit. Integer mattis est quis risus aliquam, vel maximus neque dictum. Aenean auctor mattis sollicitudin. Nulla et hendrerit sem. Pellentesque ultricies rhoncus mi rutrum aliquam. Fusce ultricies sed urna et venenatis. Morbi sollicitudin viverra maximus. Integer sed convallis lorem. Integer nec suscipit urna. In imperdiet urna sed augue placerat, vitae molestie ligula tincidunt.</div>
+				<div class="w-full h-[50%] lg:h-[30%] flex flex-col p-8 lg:px-[15%] lg:flex-row text-[12px] text-white text-justify font-primary bg-black">${deskripsi}</div>
 		</div>`;
 		const layer = $('.layer-review-portofolio');
 		if(layer.length == 0){
@@ -38,7 +38,7 @@ const portofolio = {
 		this.dataPortofolio.forEach((e)=>{
 			$('.list-portofolio').append(this.listItem(e.img,i));
 			$(`.list-${i}`).on('click',()=>{
-				this.layerForReview(e.img);
+				this.layerForReview(e.img,e.deskripsi);
 			})
 			i++;
 		})
