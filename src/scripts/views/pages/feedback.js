@@ -8,7 +8,7 @@ const aboutUs = {
 			${await btnContact.init()}
 			<section class="w-full h-auto flex flex-col py-[100px]  bg-red-600">
 				<div class="w-full h-full flex">
-					<form id="testimoniForm" class="w-full w-lg-[400px] h-auto bg-white m-auto flex flex-col px-[40px]">
+					<form id="testimoniForm" class="w-full md:w-[400px] h-auto bg-white m-auto flex flex-col px-[40px]">
 						<img src="${this.dataTentang.logo}" class="w-[60px] h-[60px] mx-auto mt-[20px]">
 						<h3 class="w-full text-center mt-[20px] font-primary text-[17px] font-[600] uppercase">Feedback</h3>
 						<h4 class="text-black font-primary text-center mt-[40px] text-[13px]">Bagaimana penilaianmu terhadap Ranprecast?</h4>
