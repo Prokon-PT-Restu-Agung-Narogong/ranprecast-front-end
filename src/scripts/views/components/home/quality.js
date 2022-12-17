@@ -16,43 +16,43 @@ const quality = {
 					</div>
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">
 						<div class="m-auto">
-						<img src="${this.dataQuality[0].icon}" class="w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
+						<img src="${this.dataQuality[0].icon}" class="object-cover w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
 						<h4 class="text-[11px] font-[600] font-primary text-center md:text-[14px] md:mt-[20px] xl:text-[16px]">${this.dataQuality[0].deskripsi}</h4>
 						</div>
 					</div>
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">
 						<div class="m-auto">
-						<img src="${this.dataQuality[1].icon}" class="w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
+						<img src="${this.dataQuality[1].icon}" class="object-cover w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
 						<h4 class="text-[11px] font-[600] font-primary text-center md:text-[14px] md:mt-[20px] xl:text-[16px]">${this.dataQuality[1].deskripsi}</h4>
 						</div>
 					</div>
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">
 						<div class="m-auto">
-						<img src="${this.dataQuality[2].icon}" class="w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
+						<img src="${this.dataQuality[2].icon}" class="object-cover w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
 						<h4 class="text-[11px] font-[600] font-primary text-center md:text-[14px] md:mt-[20px] xl:text-[16px]">${this.dataQuality[2].deskripsi}</h4>
 						</div>
 					</div>
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">
 						<div class="m-auto">
-						<img src="${this.dataQuality[3].icon}" class="w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
+						<img src="${this.dataQuality[3].icon}" class="object-cover w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
 						<h4 class="text-[11px] font-[600] font-primary text-center md:text-[14px] md:mt-[20px] xl:text-[16px]">${this.dataQuality[3].deskripsi}</h4>
 						</div>
 					</div>
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">
 						<div class="m-auto">
-						<img src="${this.dataQuality[4].icon}" class="w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
+						<img src="${this.dataQuality[4].icon}" class="object-cover w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
 						<h4 class="text-[11px] font-[600] font-primary text-center md:text-[14px] md:mt-[20px] xl:text-[16px]">${this.dataQuality[4].deskripsi}</h4>
 						</div>
 					</div>
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">
 						<div class="m-auto">
-						<img src="${this.dataQuality[5].icon}" class="w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
+						<img src="${this.dataQuality[5].icon}" class="object-cover w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
 						<h4 class="text-[11px] font-[600] font-primary text-center md:text-[14px] md:mt-[20px] xl:text-[16px]">${this.dataQuality[5].deskripsi}</h4>
 						</div>
 					</div>
 					<div class="w-[120px] h-[120px] flex flex-col md:w-[220px] md:h-[220px]">
 						<div class="m-auto">
-						<img src="${this.dataQuality[6].icon}" class="w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
+						<img src="${this.dataQuality[6].icon}" class="object-cover w-[30px] h-[30px] mx-auto md:w-[50px] md:h-[50px] xl:w-[70px] xl:h-[70px]" >
 						<h4 class="text-[11px] font-[600] font-primary text-center md:text-[14px] md:mt-[20px] xl:text-[16px]">${this.dataQuality[6].deskripsi}</h4>
 						</div>
 					</div>

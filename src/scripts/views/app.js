@@ -29,12 +29,14 @@ class App {
   }
 
   async renderPage() {
-    const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
-    this.main.innerHTML = await page.init();
-    $('.loading-wrap').show();
-    await page.afterRender();
-    $('.loading-wrap').hide();
+      const url = UrlParser.parseActiveUrlWithCombiner();
+      const page = routes[url];
+      this.main.innerHTML = await page.init().then(async(e)=>{
+        $('.loading-wrap').show();
+        return e;
+      });
+      $('.loading-wrap').hide();
+      await page.afterRender();
   }
 }
 

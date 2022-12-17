@@ -3,6 +3,7 @@ const hero = {
 	async init(){
 		this.data = new ContentData()
 		this.dataProducts = await this.data.getDataProduk();
+		this.maxImage = this.dataProducts.length-1;
 		return `
 		<div class="w-full h-[360px] bg-black flex flex-col relative hero-wrap md:h-[460px] lg:h-[500px]">
 			<img src="./images/loading.gif" data-src="${this.dataProducts[0].img}" class="lazyload w-full h-full absolute z-0 object-cover select-none image-hero"></img>
@@ -17,8 +18,8 @@ const hero = {
 		setTimeout(()=>{
 			i++;
 			if(i >= this.maxImage){
-				i=1;
-				template = `<img src="./images/loading.gif" data-src="./images/product/(12).jpg" class="lazyload w-full h-full absolute z-0 select-none image-hero"></img>`;
+				i=0;
+				template = `<img src="./images/loading.gif" data-src="${this.dataProducts[i].img}" class="lazyload w-full h-full absolute z-0 select-none image-hero object-cover"></img>`;
 			}
 			element.find('.image-hero').remove()
 			element.append(template)
@@ -28,7 +29,7 @@ const hero = {
 	},
 	async afterRender(){
 		const imageHero = $('.hero-wrap');
-		this.slideHero(imageHero,1,5000);
+		this.slideHero(imageHero,0,5000);
 		return ``;
 	}
 }

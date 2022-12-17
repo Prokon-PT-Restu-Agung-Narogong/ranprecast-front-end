@@ -14,7 +14,7 @@ const hero = {
 				<div class="w-full mt-[23px]">
 					<a href="#/products" class="p-[7px_5px_7px_5px] font-primary text-white bgcolor-primary text-[9px] md:text-[13px] md:p-[12px_26px]">Jelajahi Produk</a>
 					<a href="#/aboutus" class="p-[7px_5px_7px_5px] font-primary text-white bg-gray-600 text-[9px] md:text-[13px] md:p-[12px_26px]">Tentang Kami</a>
-				</div>
+				</div>	
 			</div>
 		</div>`;
 	},
@@ -27,7 +27,7 @@ const hero = {
 
 		setTimeout(()=>{
 			i++;
-			if(i >= dataImage.length){
+			if(i > (dataImage.length-1)){
 				i=0;
 			}
 			element.find('.image-hero').remove()

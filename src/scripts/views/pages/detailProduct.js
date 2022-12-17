@@ -16,7 +16,7 @@ const detailProducts = {
 					<h1 class="text-[24px] w-full text-center font-primary uppercase font-[700]">Detail <span class="color-primary">Produk</span> </h1>
 				</div>
 				<div class="w-full min-h-[600px] flex xl:flex-row flex-col">
-					<div class="w-full xl:w-[550px] xl:h-[550px]  p-4 relative img-wrap">
+					<div class="w-full h-[300px] xl:w-[550px] xl:h-[550px]  p-4 relative img-wrap">
 						<button class="w-[50px] h-[50px] hidden absolute left-4 inset-y-[40%] text-gray-600 prev-image opacity-[50%]">
 							<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-full" viewBox="0 0 20 20" fill="currentColor">
 							  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
@@ -60,22 +60,27 @@ const detailProducts = {
 	},
 	async addSpecs(){
 		const specs = await $('.specs');
-		this.product[0].specs.forEach((e)=>{
-			specs.append(`<li>${e}</li>`)
-		})
+		if(this.product[0].specs != null){
+			this.product[0].specs.forEach((e)=>{
+				specs.append(`<li>${e}</li>`)
+			})			
+		}
 	},
 	async addDimensi(){
 		const dimensi = await $('.dimensi');
-		this.product[0].dimensi.forEach((e)=>{
-			dimensi.append(`<li>${e}</li>`)
-		})
+		if(this.product[0].dimensi != null){
+			this.product[0].dimensi.forEach((e)=>{
+				dimensi.append(`<li>${e}</li>`)
+			})
+		}
 	},
 	async addJenis(){
 		const jenis = await $('.dimensi');
-		console.log(this.product[0])
-		this.product[0].jenis.forEach((e)=>{
-			jenis.append(`<li>${e}</li>`)
-		})
+		if(this.product[0].jenis != null){
+			this.product[0].jenis.forEach((e)=>{
+				jenis.append(`<li>${e}</li>`)
+			})			
+		}
 	},
 	async changeImage(){
 
